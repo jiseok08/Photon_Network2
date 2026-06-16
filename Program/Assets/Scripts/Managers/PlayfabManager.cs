@@ -45,8 +45,6 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
 
     private IEnumerator ConnectRoutine()
     {
-        Singleton.Instance.Call();
-
         PhotonNetwork.ConnectUsingSettings(); // Master Server로 연결하는 함수
 
         // 서버 연결이 완료되거나 시간이 초과될 때까지 대기합니다.
