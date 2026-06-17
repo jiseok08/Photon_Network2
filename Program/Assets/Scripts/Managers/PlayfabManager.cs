@@ -30,7 +30,13 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.GameVersion = version; // 버전 맞추기
 
-        StartCoroutine(ConnectRoutine());
+        PhotonNetwork.ConnectUsingSettings(); // Master Server로 연결하는 함수
+    }
+
+    public override void OnConnectedToMaster()
+    {
+        // 특정 로비를 생성하여 진입하는 함수
+        PhotonNetwork.JoinLobby();
     }
 
     public void Success(GetAccountInfoResult getAccountInfoRequest)
@@ -41,20 +47,6 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
     public void Failed(PlayFabError playFabError)
     {
         Debug.Log(playFabError.GenerateErrorReport());
-    }
-
-    private IEnumerator ConnectRoutine()
-    {
-        PhotonNetwork.ConnectUsingSettings(); // Master Server로 연결하는 함수
-
-        // 서버 연결이 완료되거나 시간이 초과될 때까지 대기합니다.
-        while (PhotonNetwork.IsConnectedAndReady == false)
-        {
-            yield return null;
-        }
-
-        // 특정 로비를 생성하여 진입하는 함수
-        PhotonNetwork.JoinLobby();
     }
 
     public override void OnJoinedLobby()
