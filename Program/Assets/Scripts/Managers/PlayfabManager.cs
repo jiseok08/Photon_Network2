@@ -46,7 +46,7 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
 
     public void Failed(PlayFabError playFabError)
     {
-        Debug.Log(playFabError.GenerateErrorReport());
+        PanelManager.Instance.Open(Panel.Error, playFabError.GenerateErrorReport());
     }
 
     public override void OnJoinedLobby()

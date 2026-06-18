@@ -32,6 +32,6 @@ public class SubscribePanel : MonoBehaviourPunCallbacks
 
     public void Failed(PlayFabError playFabError)
     {
-        PanelManager.Instance.Open(playFabError.GenerateErrorReport());
+        PanelManager.Instance.Open(Panel.Error,playFabError.GenerateErrorReport());
     }
 }
