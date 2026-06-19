@@ -33,6 +33,11 @@ public class PlayfabManager : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings(); // Master Server로 연결하는 함수
     }
 
+    public void Open()
+    {
+        PanelManager.Instance.Open(Panel.Subscribe);
+    }
+
     public override void OnConnectedToMaster()
     {
         // 특정 로비를 생성하여 진입하는 함수

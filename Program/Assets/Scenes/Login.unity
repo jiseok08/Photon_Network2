@@ -671,11 +671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -684,7 +684,7 @@ PrefabInstance:
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 169118111}
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -695,7 +695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: Open
       objectReference: {fileID: 0}
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -703,7 +703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: PlayfabManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -711,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
@@ -724,6 +724,10 @@ PrefabInstance:
     - target: {fileID: 4219775037358148393, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345439600948651706, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 7492980583707812697, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_text
@@ -773,6 +777,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8547215251416748959, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -200
+      objectReference: {fileID: 0}
     - target: {fileID: 9072808054893200840, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
       propertyPath: m_Name
       value: Email Input Field
@@ -782,7 +790,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4403855508980370115, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcf606e62d3c6eb43ad0c0de3628976d, type: 3}
