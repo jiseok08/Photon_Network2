@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 4945644580716987771}
   - component: {fileID: 1795669374947539016}
   - component: {fileID: 869916657458696051}
+  - component: {fileID: 4237200434024591288}
   m_Layer: 5
   m_Name: Room Button
   m_TagString: Untagged
@@ -260,6 +261,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4237200434024591288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868339250252919888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beeec5230f8484944a5b9d50d12c0f8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomStatus
+  roomNameText: {fileID: 3464589320777430044}
+  roomIndexText: {fileID: 752674894021209190}
+  roomPersonnelText: {fileID: 2866960351585788732}
 --- !u!1 &2725656863265471130
 GameObject:
   m_ObjectHideFlags: 0
