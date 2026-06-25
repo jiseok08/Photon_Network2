@@ -30,7 +30,7 @@ public class RoomPanel : MonoBehaviourPunCallbacks
     
         PhotonNetwork.CreateRoom(roomNameInputField.text, roomOptions);
 
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 
     public void Select()
