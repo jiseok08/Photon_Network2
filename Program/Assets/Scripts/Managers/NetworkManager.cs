@@ -1,10 +1,10 @@
+using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
-    [SerializeField] Transform createPositon;
+    [SerializeField] List<Transform> createPositions = new List<Transform>();
 
     private void Start()
     {
@@ -13,6 +13,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
 
     public void Create()
     {
-        PhotonNetwork.Instantiate("Character", createPositon.position, Quaternion.identity);
+        int index = PhotonNetwork.CurrentRoom.PlayerCount - 1;
+
+        PhotonNetwork.Instantiate("Character", createPositions[index].position, Quaternion.identity);
     }
 }
