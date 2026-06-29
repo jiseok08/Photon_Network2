@@ -600,6 +600,7 @@ GameObject:
   - component: {fileID: 782182555732655432}
   - component: {fileID: 2278078694525864950}
   - component: {fileID: 7055020073086062568}
+  - component: {fileID: 1543207338559159584}
   m_Layer: 0
   m_Name: eyes
   m_TagString: Untagged
@@ -725,6 +726,22 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1543207338559159584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064311142578521798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0260150843494d3419ba9cca296e80a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rotation
+  axis: 0
+  speed: 10
+  mouseX: 0
+  mouseY: 0
 --- !u!1 &5402771614005443689
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +981,9 @@ GameObject:
   - component: {fileID: 6375611052045036760}
   - component: {fileID: 1509564657074403692}
   - component: {fileID: 6190338307903290801}
+  - component: {fileID: 1109015353113993907}
+  - component: {fileID: 4678516714961348141}
+  - component: {fileID: 6569910074501700364}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -980,7 +1000,7 @@ Transform:
   m_GameObject: {fileID: 7775379817744128971}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: -3.75}
+  m_LocalPosition: {x: -3, y: 0.5, z: -3.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1029,7 +1049,9 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 1109015353113993907}
+  - {fileID: 4678516714961348141}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -1046,7 +1068,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Character
   speed: 10
-  rb: {fileID: 0}
+  rotation: {fileID: 0}
+  rigidbody: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
 --- !u!54 &1509564657074403692
 Rigidbody:
@@ -1070,10 +1093,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &6190338307903290801
 CapsuleCollider:
@@ -1098,6 +1121,54 @@ CapsuleCollider:
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1109015353113993907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775379817744128971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64179f3720bbfe947b7724caa67b7c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PhotonUnityNetworking::Photon.Pun.PhotonRigidbodyView
+  m_SynchronizeVelocity: 1
+  m_SynchronizeAngularVelocity: 0
+  m_TeleportEnabled: 0
+  m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &4678516714961348141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775379817744128971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PhotonUnityNetworking::Photon.Pun.PhotonTransformView
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &6569910074501700364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7775379817744128971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0260150843494d3419ba9cca296e80a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Rotation
+  axis: 0
+  speed: 10
+  mouseX: 0
+  mouseY: 0
 --- !u!1 &8059497588884239820
 GameObject:
   m_ObjectHideFlags: 0

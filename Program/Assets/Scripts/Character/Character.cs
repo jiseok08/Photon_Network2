@@ -4,12 +4,14 @@ using UnityEngine;
 public class Character : MonoBehaviourPun
 {
     [SerializeField] float speed;
-    [SerializeField] Rigidbody rb;
+    [SerializeField] Rotation rotation;
+    [SerializeField] Rigidbody rigidbody;
     [SerializeField] Vector3 direction;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody>();
+        rotation = GetComponent<Rotation>();
     }
 
     private void Start()
@@ -24,24 +26,25 @@ public class Character : MonoBehaviourPun
 
     public void Countrol()
     {
-        direction.x += Input.GetAxisRaw("Horizontal");
-        direction.z += Input.GetAxisRaw("Vertical");
+        direction.x = Input.GetAxisRaw("Horizontal");
+        direction.z = Input.GetAxisRaw("Vertical");
 
-        Debug.Log(direction.x + ", " + direction.z);
-
-        Vector3.Normalize(direction);
+        direction.Normalize();
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if(photonView.IsMine)
+        {
+            Move();
+
+            rotation.RotateY(rigidbody);
+        }
     }
 
     public void Move()
     {
-        rb.MovePosition(direction * speed * Time.deltaTime);
-
-        Debug.Log("MOVE");
+        rigidbody.MovePosition(rigidbody.position + rigidbody.transform.TransformDirection(direction) * speed * Time.fixedDeltaTime);
     }
 
     private void Disablecamera()
