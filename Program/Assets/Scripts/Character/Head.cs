@@ -1,5 +1,6 @@
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Head : MonoBehaviourPunCallbacks
 {
@@ -10,9 +11,12 @@ public class Head : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        rotation = GetComponent<Rotation>();
+        rotation = GetComponentInParent<Rotation>();
     }
 
-    
+    private void Update()
+    {
+        rotation.RotateX(minimumAngle, maximumAngle);
+    }
 
 }

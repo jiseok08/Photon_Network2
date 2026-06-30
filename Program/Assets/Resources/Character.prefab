@@ -600,7 +600,8 @@ GameObject:
   - component: {fileID: 782182555732655432}
   - component: {fileID: 2278078694525864950}
   - component: {fileID: 7055020073086062568}
-  - component: {fileID: 1543207338559159584}
+  - component: {fileID: 4444951991567858481}
+  - component: {fileID: 598187966791072973}
   m_Layer: 0
   m_Name: eyes
   m_TagString: Untagged
@@ -726,7 +727,22 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &1543207338559159584
+--- !u!114 &4444951991567858481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5064311142578521798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc587ff836004f2428d24babd094a714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Head
+  rotation: {fileID: 0}
+  minimumAngle: -55
+  maximumAngle: 55
+--- !u!114 &598187966791072973
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -739,9 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rotation
   axis: 0
-  speed: 10
-  mouseX: 0
-  mouseY: 0
+  speed: 100
 --- !u!1 &5402771614005443689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,9 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rotation
   axis: 0
-  speed: 10
-  mouseX: 0
-  mouseY: 0
+  speed: 100
 --- !u!1 &8059497588884239820
 GameObject:
   m_ObjectHideFlags: 0

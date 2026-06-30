@@ -5,25 +5,18 @@ public class Rotation : MonoBehaviour
     [SerializeField] float axis;
     [SerializeField] float speed;
 
-    [SerializeField] float mouseX;
-    [SerializeField] float mouseY;
-
-    private void Update()
-    {
-        mouseX += Input.GetAxisRaw("Mouse X");
-        mouseX += Input.GetAxisRaw("Mouse Y");
-    }
-
     public void RotateX(float minAngle, float maxAngle)
     {
-        Mathf.Clamp(axis, minAngle, maxAngle);
+        axis += Input.GetAxisRaw("Mouse Y") * speed * Time.deltaTime;
+
+        axis = Mathf.Clamp(axis, minAngle, maxAngle);
+
+        transform.localEulerAngles = new Vector3(-axis, 0, 0);
     }
 
     public void RotateY(Rigidbody rigidbody)
     {
-        axis += mouseX * speed * Time.fixedDeltaTime;
-
-        
+        axis += Input.GetAxisRaw("Mouse X") * speed * Time.deltaTime;
 
         rigidbody.transform.eulerAngles = new Vector3(0, axis, 0);
     }
