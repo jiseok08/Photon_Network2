@@ -6,10 +6,12 @@ public class Character : MonoBehaviourPun
     [SerializeField] float speed;
     [SerializeField] Rotation rotation;
     [SerializeField] Rigidbody rigidbody;
+    [SerializeField] Animator animator;
     [SerializeField] Vector3 direction;
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>();
         rotation = GetComponent<Rotation>();
     }
@@ -28,6 +30,12 @@ public class Character : MonoBehaviourPun
     {
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.z = Input.GetAxisRaw("Vertical");
+
+        if (direction.x > 0 || direction.z > 0)
+        {
+            animator.SetInteger("X", (int)direction.x);
+            animator.SetInteger("Z", (int)direction.z);
+        }
 
         direction.Normalize();
     }
