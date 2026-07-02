@@ -24,6 +24,8 @@ public class Character : MonoBehaviourPun
     private void Update()
     {
         Countrol();
+
+        Animate();
     }
 
     public void Countrol()
@@ -31,13 +33,13 @@ public class Character : MonoBehaviourPun
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.z = Input.GetAxisRaw("Vertical");
 
-        if (direction.x > 0 || direction.z > 0)
-        {
-            animator.SetInteger("X", (int)direction.x);
-            animator.SetInteger("Z", (int)direction.z);
-        }
-
         direction.Normalize();
+    }
+
+    void Animate()
+    {
+        animator.SetInteger("X", Mathf.Abs((int)direction.x));
+        animator.SetInteger("Z", Mathf.Abs((int)direction.z));
     }
 
     private void FixedUpdate()
