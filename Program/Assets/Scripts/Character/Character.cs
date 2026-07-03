@@ -23,9 +23,24 @@ public class Character : MonoBehaviourPun
 
     private void Update()
     {
-        Countrol();
+        if(photonView.IsMine)
+        {
+            Countrol();
 
-        Animate();
+            Animate();
+
+            Pause();
+        }
+    }
+
+    void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            MouseManager.Instance.SetMouse(true);
+
+            PanelManager.Instance.Open(Panel.Pause);
+        }
     }
 
     public void Countrol()
