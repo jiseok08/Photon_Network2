@@ -69,7 +69,7 @@ public class Character : MonoBehaviourPun
 
     public void Move()
     {
-        rigidbody.MovePosition(rigidbody.position + rigidbody.transform.TransformDirection(direction) * speed * Time.fixedDeltaTime);
+        rigidbody.linearVelocity = rigidbody.transform.TransformDirection(direction).normalized * speed;
     }
 
     private void Disablecamera()
@@ -85,6 +85,14 @@ public class Character : MonoBehaviourPun
             eyes.GetComponent<AudioListener>().gameObject.SetActive(false);
 
             eyes.gameObject.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Robot"))
+        {
+            PhotonNetwork.Destroy(other.gameObject);
         }
     }
 }

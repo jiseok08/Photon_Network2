@@ -12,7 +12,9 @@ public class PanelManager : Singleton<PanelManager>
     {
         if (dictionary.TryGetValue(panel, out clone) == false)
         {
+            Debug.Log($"[PanelManager] 로드 시도 중인 panel 값: '{panel}'");
             clone = (GameObject)Instantiate(Resources.Load(panel.ToString()));
+
 
             clone.name = clone.name.Replace("(Clone)", " ");
 
