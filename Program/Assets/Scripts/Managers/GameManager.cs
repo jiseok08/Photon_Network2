@@ -17,6 +17,6 @@ public class GameManager : MonoBehaviour
     {
         time = PhotonNetwork.Time - initializeTime;
 
-        Debug.Log(time);
+        // Debug.Log(time);
     }
 }

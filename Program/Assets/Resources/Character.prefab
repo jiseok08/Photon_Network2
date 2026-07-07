@@ -1065,6 +1065,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 6375611052045036760}
   - {fileID: 1109015353113993907}
   - {fileID: 4678516714961348141}
   - {fileID: 6990217830690555047}
@@ -1183,7 +1184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rotation
   axis: 0
-  speed: 100
+  speed: 10
 --- !u!114 &6990217830690555047
 MonoBehaviour:
   m_ObjectHideFlags: 0

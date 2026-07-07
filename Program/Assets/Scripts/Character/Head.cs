@@ -14,9 +14,10 @@ public class Head : MonoBehaviourPunCallbacks
         rotation = GetComponentInParent<Rotation>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        rotation.MouseY = Input.GetAxisRaw("Mouse Y");
+
         rotation.RotateX(minimumAngle, maximumAngle);
     }
-
 }

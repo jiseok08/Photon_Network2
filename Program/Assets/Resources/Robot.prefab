@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 6530005649022669578}
   - component: {fileID: 2645918290339748550}
   - component: {fileID: 4267397234048045378}
+  - component: {fileID: 376794645962946012}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Robot
@@ -325,6 +326,22 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.625, z: 0}
+--- !u!114 &376794645962946012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2587312999846115834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PhotonUnityNetworking::Photon.Pun.PhotonTransformView
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
 --- !u!1 &4558006699780432584
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,9 +1,10 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class Character : MonoBehaviourPun
+public class Character : MonoBehaviourPun, IPunObservable
 {
     [SerializeField] float speed;
+    [SerializeField] float health = 100;
     [SerializeField] Rotation rotation;
     [SerializeField] Rigidbody rigidbody;
     [SerializeField] Animator animator;
@@ -23,7 +24,7 @@ public class Character : MonoBehaviourPun
 
     private void Update()
     {
-        if(photonView.IsMine)
+        if (photonView.IsMine)
         {
             Countrol();
 
@@ -45,6 +46,8 @@ public class Character : MonoBehaviourPun
 
     public void Countrol()
     {
+        rotation.MouseX = Input.GetAxisRaw("Mouse X");
+
         direction.x = Input.GetAxisRaw("Horizontal");
         direction.z = Input.GetAxisRaw("Vertical");
 
@@ -59,7 +62,7 @@ public class Character : MonoBehaviourPun
 
     private void FixedUpdate()
     {
-        if(photonView.IsMine)
+        if (photonView.IsMine)
         {
             Move();
 
@@ -74,7 +77,7 @@ public class Character : MonoBehaviourPun
 
     private void Disablecamera()
     {
-        if(photonView.IsMine)
+        if (photonView.IsMine)
         {
             Camera.main.gameObject.SetActive(false);
         }
@@ -90,9 +93,33 @@ public class Character : MonoBehaviourPun
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Robot"))
+        if (other.CompareTag("Robot"))
         {
-            PhotonNetwork.Destroy(other.gameObject);
+            PhotonView view = other.GetComponent<PhotonView>();
+
+            if (view != null)
+            {
+                Debug.Log("Robot Object does not have a PhotonView");
+            }
+
+            if (view.IsMine || PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.Destroy(view.gameObject);
+            }
+        }
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if(stream.IsWriting)
+        {
+            // 내 오브젝트라면 다른 클라이언트에게 데이터를 전송합니다.
+            stream.SendNext(health);
+        }
+        else
+        {
+            // 다른 클라이언트의 데이터를 받습니다.
+            health = (float)stream.ReceiveNext();
         }
     }
 }

@@ -5,9 +5,12 @@ public class Rotation : MonoBehaviour
     [SerializeField] float axis;
     [SerializeField] float speed;
 
+    public float MouseX { set; get; }
+    public float MouseY { set; get; }
+
     public void RotateX(float minAngle, float maxAngle)
     {
-        axis += Input.GetAxisRaw("Mouse Y") * speed * Time.deltaTime;
+        axis += MouseX * speed;
 
         axis = Mathf.Clamp(axis, minAngle, maxAngle);
 
@@ -16,7 +19,7 @@ public class Rotation : MonoBehaviour
 
     public void RotateY(Rigidbody rigidbody)
     {
-        axis += Input.GetAxisRaw("Mouse X") * speed * Time.deltaTime;
+        axis += MouseX * speed;
 
         rigidbody.transform.eulerAngles = new Vector3(0, axis, 0);
     }
